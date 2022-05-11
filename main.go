@@ -18,11 +18,11 @@ type User struct {
 }
 
 type TweetData struct {
-	CreatedAt time.Time
-	AuthorID  string
-	ID        string
-	Text      string
-	Data      map[int64]entities.TweetPublicMetrics
+	CreatedAt     time.Time
+	AuthorID      string
+	ID            string
+	Text          string
+	PublicMetrics map[int64]entities.TweetPublicMetrics
 }
 
 var tweet_authors = map[string]string{}
@@ -138,17 +138,17 @@ func CollectTweetData(tweet entities.Tweet) {
 		tweet_data := &TweetData{}
 		db.Read("users", item_id, tweet_data)
 		fmt.Printf("%#v\n", tweet_data)
-		tweet_data.Data[time.Now().Unix()] = tweet.PublicMetrics
+		tweet_data.PublicMetrics[time.Now().Unix()] = tweet.PublicMetrics
 		db.Write("users", item_id, tweet_data)
 	} else {
 		tweet_data := &TweetData{
-			CreatedAt: tweet.CreatedAt,
-			AuthorID:  tweet.AuthorID,
-			ID:        tweet.ID,
-			Text:      tweet.Text,
-			Data:      map[int64]entities.TweetPublicMetrics{},
+			CreatedAt:     tweet.CreatedAt,
+			AuthorID:      tweet.AuthorID,
+			ID:            tweet.ID,
+			Text:          tweet.Text,
+			PublicMetrics: map[int64]entities.TweetPublicMetrics{},
 		}
-		tweet_data.Data[time.Now().Unix()] = tweet.PublicMetrics
+		tweet_data.PublicMetrics[time.Now().Unix()] = tweet.PublicMetrics
 		db.Write("users", item_id, tweet_data)
 		tweet_authors[tweet.ID] = tweet.AuthorID
 	}
