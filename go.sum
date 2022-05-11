@@ -2,6 +2,8 @@ github.com/andybalholm/brotli v1.0.4 h1:V7DdXeJtZscaqfNuAdSRuRFzuiKlHSC/Zh3zl9qY
 github.com/andybalholm/brotli v1.0.4/go.mod h1:fO7iG3H7G2nSZ7m0zPUDn85XEX2GTukHGRSepvi9Eig=
 github.com/arshamalh/twigo v0.0.0-20220504124806-c17d8a1ed7cd h1:WhIXfz7BrQ5BdeuJ4/uy/cJmZC2Atwx+028n4n0q4uE=
 github.com/arshamalh/twigo v0.0.0-20220504124806-c17d8a1ed7cd/go.mod h1:FKUUC9NtOvjpwtKj3sqbNqWOlxweHzWAHzPfM7o+PrM=
+github.com/arshamalh/twigo v0.1.0-beta h1:J7MaVgEWBs4q8ZZKEZVG7B+30WXThcPBlMkZ1RARgiI=
+github.com/arshamalh/twigo v0.1.0-beta/go.mod h1:FKUUC9NtOvjpwtKj3sqbNqWOlxweHzWAHzPfM7o+PrM=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/go-co-op/gocron v1.13.0 h1:BjkuNImPy5NuIPEifhWItFG7pYyr27cyjS6BN9w/D4c=
 github.com/go-co-op/gocron v1.13.0/go.mod h1:GD5EIEly1YNW+LovFVx5dzbYVcIc8544K99D8UVRpGo=

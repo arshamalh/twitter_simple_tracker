@@ -3,7 +3,7 @@ module github.com/arshamalh/twitter_simple_tracker
 go 1.18
 
 require (
-	github.com/arshamalh/twigo v0.0.0-20220504124806-c17d8a1ed7cd
+	github.com/arshamalh/twigo v0.1.0-beta
 	github.com/go-co-op/gocron v1.13.0
 	github.com/gofiber/fiber/v2 v2.33.0
 	github.com/sdomino/scribble v0.0.0-20200707180004-3cc68461d505
