@@ -19,7 +19,7 @@
 			const fileReader = new FileReader();
 			fileReader.readAsText(file)
 			fileReader.onload = (e) => {
-				resolve(JSON.parse(e.target.result).public_metrics)
+				resolve(JSON.parse(e.target.result))
 			}
 		})
 	}
@@ -32,8 +32,10 @@
 			{#await extractJSONDataFromFile(file)}
 				<p>waiting...</p>
 			{:then jsonData}
-				<h3>{file.name}</h3>
-				<Chart jsonData={jsonData}/>
+				<p>
+					<a href="https://twitter.com/i/user/{jsonData['author_id']}">Author</a> - <a href="https://twitter.com/i/web/status/{jsonData['id']}">Tweet</a> - {jsonData["created_at"]}
+				</p>
+				<Chart jsonData={jsonData.public_metrics}/>
 			{/await}
 		</div>
 	{/each}
