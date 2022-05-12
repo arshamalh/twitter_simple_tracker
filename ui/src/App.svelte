@@ -55,7 +55,7 @@
 		margin-top: 20px;
 	}
 
-	h3, p {
+	p {
 		text-align: center;
 	}
 
