@@ -7,7 +7,7 @@
 	let chart
 
 	const data = {
-		labels: labels,
+		labels: [],
 		datasets: [
 			{
 				label: 'Likes',
