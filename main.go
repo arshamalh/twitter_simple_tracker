@@ -18,11 +18,11 @@ type User struct {
 }
 
 type TweetData struct {
-	CreatedAt     time.Time
-	AuthorID      string
-	ID            string
-	Text          string
-	PublicMetrics map[int64]entities.TweetPublicMetrics
+	CreatedAt     time.Time                             `json:"created_at"`
+	AuthorID      string                                `json:"author_id"`
+	ID            string                                `json:"id"`
+	Text          string                                `json:"text"`
+	PublicMetrics map[int64]entities.TweetPublicMetrics `json:"public_metrics"`
 }
 
 var tweet_authors = map[string]string{}
