@@ -23,6 +23,28 @@
 			}
 		})
 	}
+
+	function author_link(file_name, json_data) {
+		let author_id;
+		if (json_data["author_id"] == "") {
+			author_id = file_name.split("_")[4].split(".")[0]
+		} else {
+			author_id = json_data["author_id"]
+		}
+
+		return `https://twitter.com/i/user/${author_id}`
+	}
+
+	function tweet_link(file_name, json_data) {
+		let tweet_id;
+		if (json_data["id"] == "") {
+			tweet_id = file_name.split("_")[1]
+		} else {
+			tweet_id = json_data["id"]
+		}
+
+		return `https://twitter.com/i/web/status/${tweet_id}`
+	}
 </script>
 
 <main>
@@ -33,7 +55,7 @@
 				<p>waiting...</p>
 			{:then jsonData}
 				<p>
-					<a href="https://twitter.com/i/user/{jsonData['author_id']}">Author</a> - <a href="https://twitter.com/i/web/status/{jsonData['id']}">Tweet</a> - {jsonData["created_at"]}
+					<a href="{author_link(file.name, jsonData)}">Author</a> - <a href="{tweet_link(file.name, jsonData)}">Tweet</a> - {jsonData["created_at"]}
 				</p>
 				<Chart jsonData={jsonData.public_metrics}/>
 			{/await}
