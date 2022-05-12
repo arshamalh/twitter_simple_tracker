@@ -26,10 +26,10 @@
 
 	function author_link(file_name, json_data) {
 		let author_id;
-		if (json_data["author_id"] == "") {
-			author_id = file_name.split("_")[4].split(".")[0]
-		} else {
+		if (!!json_data["author_id"]) {
 			author_id = json_data["author_id"]
+		} else {
+			author_id = file_name.split("_")[4].split(".")[0]
 		}
 
 		return `https://twitter.com/i/user/${author_id}`
@@ -37,10 +37,10 @@
 
 	function tweet_link(file_name, json_data) {
 		let tweet_id;
-		if (json_data["id"] == "") {
-			tweet_id = file_name.split("_")[1]
-		} else {
+		if (!!json_data["id"]) {
 			tweet_id = json_data["id"]
+		} else {
+			tweet_id = file_name.split("_")[1]
 		}
 
 		return `https://twitter.com/i/web/status/${tweet_id}`
