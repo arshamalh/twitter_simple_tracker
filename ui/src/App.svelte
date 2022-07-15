@@ -45,6 +45,10 @@
 
 		return `https://twitter.com/i/web/status/${tweet_id}`
 	}
+
+	function make_time(timestamp) {
+		return 
+	}
 </script>
 
 <main>
@@ -55,7 +59,12 @@
 				<p>waiting...</p>
 			{:then jsonData}
 				<p>
-					<a href="{author_link(file.name, jsonData)}">Author</a> - <a href="{tweet_link(file.name, jsonData)}">Tweet</a> - {jsonData["created_at"]}
+					<a href="{author_link(file.name, jsonData)}" target="_blank">Author</a> - 
+					<a href="{tweet_link(file.name, jsonData)}" target="_blank">Tweet</a>
+					<br/>
+					<small>
+						{new Date(parseInt(jsonData["created_id"])*1000)}
+					</small>
 				</p>
 				<Chart jsonData={jsonData.public_metrics}/>
 			{/await}
