@@ -1,4 +1,5 @@
-# twitter_simple_tracker
+# Twitter Simple Tracker
+
 This tracker will track users and tweets activities in twitter.
 
 It's the raw version of TwigoPanel: https://github.com/arshamalh/twigoPanel
